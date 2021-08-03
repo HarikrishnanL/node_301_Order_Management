@@ -1,0 +1,13 @@
+Info: error timestamp: Aug-03-2021 message: req is not defined
+Info: error timestamp: Aug-03-2021 message: Order validation failed: totalPrice: Cast to Number failed for value "[object Object]45" (type string) at path "totalPrice", restaurant: Path `restaurant` is required.
+Info: error timestamp: Aug-03-2021 message: Order validation failed: totalPrice: Cast to Number failed for value "[object Object]45" (type string) at path "totalPrice", restaurant: Path `restaurant` is required.
+Info: error timestamp: Aug-03-2021 message: Order validation failed: totalPrice: Cast to Number failed for value "[object Object]45" (type string) at path "totalPrice", restaurant: Path `restaurant` is required.
+Info: error timestamp: Aug-03-2021 message: Order validation failed: totalPrice: Cast to Number failed for value "[object Object]45" (type string) at path "totalPrice"
+Info: error timestamp: Aug-03-2021 message: Order validation failed: totalPrice: Cast to Number failed for value "[object Object]45" (type string) at path "totalPrice"
+Info: error timestamp: Aug-03-2021 message: Order validation failed: totalPrice: Cast to Number failed for value "[object Object]45" (type string) at path "totalPrice"
+Info: error timestamp: Aug-03-2021 message: Order validation failed: totalPrice: Cast to Number failed for value "[object Object]45" (type string) at path "totalPrice"
+Info: error timestamp: Aug-03-2021 message: Order validation failed: totalPrice: Cast to Number failed for value "[object Object]45" (type string) at path "totalPrice"
+Info: error timestamp: Aug-03-2021 message: Invalid value "undefined" for header "authToken"
+Info: error timestamp: Aug-03-2021 message: Invalid value "undefined" for header "authToken"
+Info: error timestamp: Aug-03-2021 message: Invalid value "undefined" for header "authToken"
+Info: error timestamp: Aug-03-2021 message: Invalid value "undefined" for header "authToken"

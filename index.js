@@ -5,13 +5,14 @@ const morgan = require('morgan');
 require('dotenv').config();
 
 // importing routes
+const Order = require("./src/app/routes/order");
 
 
 const app = express();
 app.use(morgan("dev"));
 app.use(express.json());
 
-app.set('port',process.env.port);
+app.set('port', process.env.port);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -19,14 +20,15 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-    res.json({ message: "Welcome to cutomer service microservices" });
+    res.json({ message: "Welcome to order service microservices" });
 });
 
 app.get("/order-management", (req, res) => {
-    res.json({ message: "Welcome to cutomer service microservices" });
+    res.json({ message: "Welcome to order service microservices" });
 });
 
 // routes
+app.use("/order-management", Order);
 
 app.get("*", (req, res) => {
     res.status(404).send("Invalid Endpoint")

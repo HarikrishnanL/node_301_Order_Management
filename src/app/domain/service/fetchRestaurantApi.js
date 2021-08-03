@@ -6,7 +6,7 @@ exports.getRestaurant = async (id, token) => {
         let restaurant = await superagent
             .get(process.env.restaurantTestUrl + "restaurant/single/" + id)
             .set('authToken',token);
-            return restaurant.body.response;
+            return restaurant.body.data;
     } catch (error) {
         logger.error(error.message);
         throw error;
