@@ -78,6 +78,9 @@ exports.updateOrder = async (body,orderId)=>{
 exports.updateOrderStatus = async (body,orderId)=>{
     try{
         const order = await Order.findById(orderId);
+        if(!order){
+            throw new Error('No such order found')
+        }
         order.orderStatus  = body.status;
         return await order.save();
 

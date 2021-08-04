@@ -9,6 +9,8 @@ const Order = require("./src/app/routes/order");
 
 
 const app = express();
+app.set('view engine', 'ejs');
+app.set('views', 'views');
 app.use(morgan("dev"));
 app.use(express.json());
 
@@ -24,7 +26,8 @@ app.get("/", (req, res) => {
 });
 
 app.get("/order-management", (req, res) => {
-    res.json({ message: "Welcome to order service microservices" });
+    // res.json({ message: "Welcome to order service microservices" });
+    res.render('order/index.ejs');
 });
 
 // routes

@@ -1,0 +1,23 @@
+<%- include('../includes/head.ejs') %>
+
+<body>
+    <main>
+        
+        <h1>Welcome to order management service</h1>
+    </main>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script>
+            let socket = io("http://localhost:5003")
+            let orderdetails;
+            console.log("SOCKET SORT OUT ",socket);
+            socket.on('orders',data=>{
+                orderdetails = data;
+                console.log("data=====>",data);
+            })
+            console.log("orderdetails ===>",orderdetails)
+            
+       
+    </script>
+
+<%- include('../includes/end.ejs') %>

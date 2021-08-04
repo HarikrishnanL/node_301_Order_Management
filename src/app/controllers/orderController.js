@@ -2,6 +2,7 @@ const orderService = require("../services/orderService");
 const apiResponse = require("../helpers/apiResponse");
 const fetchCustomerApi = require('../domain/service/fetchCustomerApi');
 const fetchRestaurantApi = require('../domain/service/fetchRestaurantApi');
+const io = require('../../app/utils/socket');
 
 exports.createOrder = async (req,res)=>{
     try{
@@ -9,8 +10,8 @@ exports.createOrder = async (req,res)=>{
         const customer = await fetchCustomerApi.getCustomer(req.params.userId, token);
         const restaurant = await fetchRestaurantApi.getRestaurant(req.params.restaurantId, token);
         const order = await orderService.postOrder(req.body,customer,restaurant);
+        io.getIO().emit('orders',{"order_details":order});
         return apiResponse.successResponseWithData(res,"Order received successfully",order);
-
     }catch(error){
         return apiResponse.errorResponse(res, error.message);
     }
@@ -21,7 +22,7 @@ exports.getOrder = async (req,res)=>{
         const order = await orderService.getOrder(req.params.orderId);
         return apiResponse.successResponseWithData(res,"Order reterived successfully",order);
     }catch(error){
-        return apiResponse.errorResponse(res, error.message);
+        return apiResponse.customErrorResponse(res, error.message,404);
     }
 }
 
